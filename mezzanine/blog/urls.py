@@ -1,4 +1,3 @@
-
 from django.conf.urls.defaults import patterns, url
 
 from mezzanine.conf import settings
@@ -35,5 +34,7 @@ urlpatterns = patterns("mezzanine.blog.views",
         "blog_post_detail", name="blog_post_detail_date"),
     url("^%s(?P<slug>.*)%s$" % _slashes, "blog_post_detail",
         name="blog_post_detail"),
-    url("^%s$" % _slashes[1], "blog_post_list", name="blog_post_list"),
+)
+
+urlpatterns_blog_home = patterns("mezzanine.blog.views",url("^%s$" % _slashes[1], "blog_post_list", name="blog_post_list"),
 )
